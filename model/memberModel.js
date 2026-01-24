@@ -231,7 +231,7 @@ var memberDB = {
                             } else {
                                 if(result.affectedRows > 0) {
                                     var mailOptions = {
-                                        from: 'islandfurnituresep@gmail.com',
+                                        from: 'newislandfurnituresep@gmail.com',
                                         to: email,
                                         subject: 'Island Furniture Member Account Activation',
                                         text: 'Greetings from Island Furniture... \n\n'
@@ -382,7 +382,7 @@ var memberDB = {
                         } else {
                             var member = JSON.parse(JSON.stringify(result[0]));
                             var mailOptions = {
-                                from: 'islandfurnituresep@gmail.com',
+                                from: 'newislandfurnituresep@gmail.com',
                                 to: email,
                                 subject: 'Island Furniture Member Password Reset',
                                 text: 'Greetings from Island Furniture... \n\n'
@@ -476,8 +476,8 @@ var memberDB = {
                         } else {
                             if(result.affectedRows > 0) {
                                 var mailOptions = {
-                                    from: 'islandfurnituresep@gmail.com',
-                                    to: 'islandfurnituresep@gmail.com',
+                                    from: 'newislandfurnituresep@gmail.com',
+                                    to: 'newislandfurnituresep@gmail.com',
                                     subject: 'Island Furniture Member Feedback',
                                     text: 'Feedback from Island Furniture member'
                                         + '\nName: ' + name
@@ -601,7 +601,7 @@ var generateRandomNumber = function(digits){
 var emailer = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'islandfurnituresep@gmail.com',
-        pass: 'islandFurniture123'
+        user: 'newislandfurnituresep@gmail.com',
+        pass: 'adtl ogfj vlxz nlnr'
     }
 });
