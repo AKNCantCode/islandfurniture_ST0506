@@ -207,6 +207,14 @@
                 var repassword = document.getElementById("repassword").value;
                 var ok = true;
                 console.log(oldPassword)
+
+                // If old password is provided but new password or re-entered password is missing,
+                // block submission and show an error message per requirement.
+                if (oldPassword != "" && (password == "" || repassword == "")) {
+                    alert("Please leave old password field blank unless setting a new password");
+                    return;
+                }
+
                 if (document.getElementById("profileForm").checkValidity()) {
                     if (oldPassword != "" && password != "" && repassword != "") {
                         var memberData = {
