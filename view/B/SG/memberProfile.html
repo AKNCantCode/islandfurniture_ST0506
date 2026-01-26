@@ -30,6 +30,9 @@
             document.addEventListener('DOMContentLoaded', function(){
                 member = JSON.parse(sessionStorage.getItem("member"));
 
+                // Auto Populate Email info so payload isn't empty and memberUpdate succeeds
+                document.getElementById("email").value = member.email || '';
+
                 if(member.sla == 1) {
                     document.getElementById("serviceLevelAgreement").checked = true;
                 }
@@ -196,6 +199,8 @@
                 var repassword = document.getElementById("repassword").value;
                 var ok = true;
                 console.log(oldPassword)
+
+
                 if (document.getElementById("profileForm").checkValidity()) {
                     if (oldPassword != "" && password != "" && repassword != "") {
                         var memberData = {
