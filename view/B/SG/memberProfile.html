@@ -81,13 +81,18 @@
                                 }
                             }
                         }
-                                         
-                            htmlTxt += '<h5>Order #' + (1) + '</h5>';
+
+                        for (let x = 0; x < orderIdList.length; x++) {
+                            const currentOrderId = orderIdList[x];
+
+                            htmlTxt += '<h5>Order #' + (x + 1) + '</h5>';
                             var counter = 0;
+                            finalPrice = 0; // reset total for THIS order only
+
                             //get bought items by order ID
                             for (j = 0; j < boughtItem.length; j++) {
                             
-                                if(boughtItem[j].id == orderIdList[0]) {
+                                if(boughtItem[j].id == currentOrderId) {
                                     var item = boughtItem[j];
                                     //display top level info
                                     if(counter == 0) {
@@ -130,7 +135,7 @@
                                                             <tbody>';
                             for (y = 0; y < boughtItem.length; y++) {
                             
-                                if (boughtItem[y].id == orderIdList[0]) {
+                                if (boughtItem[y].id == currentOrderId) {
                                     var product = boughtItem[y];
                                     htmlTxt += '\
                                         <tr class="cart_table_item">\
@@ -172,7 +177,7 @@
                                         </div>\
                                     </div>\
                                 </div>';
-                            finalPrice = 0;
+                            }
 
                         htmlTxt += '<h4 style="font-weight: bold; padding-left: 20px">Total Amount Spent: $'+ overallPrice + '</h4>';
                         document.getElementById("salesHistoryTab").innerHTML = htmlTxt;
